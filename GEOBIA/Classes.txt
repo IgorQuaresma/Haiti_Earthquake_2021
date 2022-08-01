@@ -1,0 +1,10 @@
+Class			Class_id
+Destroyed Buildings		1 ok
+Not affected Buildings	2 ok
+Water			3 ok
+Roads			4 ok
+Trees			5 ok
+Grass			6 ok
+
+5 samples for each except for destroyed buildings, water
+	 

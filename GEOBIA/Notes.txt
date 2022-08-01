@@ -1,0 +1,44 @@
+Step 1
+Tool - Segmentation (otb)
+input: original image   
+params: meanshift  +  8 neighborhood
+output: segmentation_results
+
+Step 2
+Tool - Zonal Statistics (otb)
+input: input image original image / input vector segmentation results
+params: standard
+output: segmentation_statistics
+
+Step 3
+Tool - join attributes by location (vector general)
+input: base layer segmentation statistics / join layer sample / join type take attributes of the first matching feature only (one to one) / check-> discard records which could not be joined 
+params: 
+output: joined layer
+
+
+Step 4
+Tool - TrainVectorClassifier (otb)
+input: input vector data -> joined layer / field names for training features -> mean_0 stdev0, mean_1 stdev 1, mean_2 stdev 2 / field cotaining the class integer labels for supervision -> class_id (samples)
+params: classifier to use for the training libsvm
+output: obia_model.model
+
+
+Step 5
+Tool - VectorClassifier (otb)
+input: segmentation_statistics
+params: model file -> obia_model
+output: classified_output
+
+
+Step 6
+change simbology classified_output to categorized 
+value -> predicted
+change the legend according to the notes used when sampling 
+
+
+Step 7
+Tool - dissolve (normal)
+input: classified_output
+params: dissolve field -> predicted
+output: dissolved_layer
