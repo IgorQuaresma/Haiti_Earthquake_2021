@@ -1,6 +1,6 @@
-# Haiti_Earthquake_2021
+# Damage Assessment with Satellite Imagery for the 2021 Haiti Earthquake
 
-Post-Earthquake Damage Assessment for Haiti Earthquake 2021 imagery for Analysis of High Resolution Imagery Class (WWU Münster).
+Post-earthquake damage assessment with satellite imagery for the 2021 Haiti earthquake in context of the course *Analysis of High-Resolution Remote Sensing Imagery* (WWU Münster, Germany)
 
 ## Introduction
 
@@ -60,8 +60,13 @@ For the pre-event imagery we used an image cropped to the study area from the im
 
 ## Methodology
 
-- Edge detection
+The image processing workflow is carried out with the QGIS Processing Toolbox. At first, the pre-event and post-event images are cropped to the study area with the function ``gdal:cliprasterbymasklayer``.
 
+Afterwards we tried out different approaches on the selected images:
+
+- Edge detection
+- Texture analysis
+- GEOBIA
 
 
 ## References 
