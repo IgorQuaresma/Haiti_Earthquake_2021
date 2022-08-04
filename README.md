@@ -21,42 +21,47 @@ The data for the study area is provided as Analysis-Ready Data (ARD) from Maxar 
 Pre-event imagery:
 - 10300100A450A500.tif
   - April 05, 2020
-  - satellite position slightly to the east
-  - good image quality
-  - not many shadows
-  - RGBA
+  - Satellite position slightly to the east
+  - Good image quality
+  - Low amount of shadows
+  - RGB
 - 10300100B4C41A00.tif
   - Feb. 27, 2021
-  - satellite position to the south-west
-  - good image quality
-  - RGBA
+  - Satellite position to the south-west
+  - Good image quality
+  - RGB
 - 1050010024A51F00.tif
   - May 31, 2021
-  - satellite position to the south
-  - RGBA
-  - blurry due to clouds, noisy
+  - Satellite position to the south
+  - Blurry due to clouds, noisy
+  - RGB
 - 10300100C1BBC200.tif
   - July 13, 2021
-  - satellite position to the south-east
-  - RGBA
+  - Satellite position to the south-east
+  - RGB
 
 Post-event imagery:
 - 10200100B6492E00.tif
   - Aug. 14, 2021
-  - satellite position to the south-west
-  - low spatial resolution
+  - Satellite position to the south-west
+  - Low spatial resolution
   - Grayscale
 - 104001006CA11700.tif
   - Aug. 15, 2021
-  - satellite position to the north
-  - good image quality
-  - RGBA
+  - Satellite position to the north
+  - Good image quality
+  - RGB
 - 10200100B5C6CC00.tif
   - Aug. 15, 2021
-  - satellite position to the south-east
+  - Satellite position to the south-east
   - Grayscale
 
-For the pre-event imagery we used an image cropped to the study area from the image 10300100A450A500.tif because of the good image qualtity and steep viewing angle. This image can be compared to the post-event image 104001006CA11700.tif from the 15th August 2021. The post-event image is also an RGB image, taken from a lower angle from the north. In some of the images artefacts are present (white spots with sharp black borders). Because the spatial resolution of the grayscale images provided by Maxar is not higher than the resolution of the multispectral images, we only considered the multispectral images for the analysis.
+For the pre-event imagery we used an image cropped to the study area from the image 10300100A450A500.tif because of the good image quality and steep viewing angle. This image can be compared to the post-event image 104001006CA11700.tif from the 15th August 2021. The post-event image is also an RGB image, taken from a lower angle from the north. In some of the images artefacts are present (white spots with sharp black borders). Because the spatial resolution of the grayscale images provided by Maxar is not higher than the resolution of the multispectral images, we only considered the multispectral images for the analysis.
+
+## Methodology
+
+- Edge detection
+
 
 
 ## References 
