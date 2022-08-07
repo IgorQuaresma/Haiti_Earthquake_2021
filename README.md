@@ -67,6 +67,7 @@ Afterwards we tried out different approaches on the selected images:
 - Edge detection
 - Texture analysis
 - GEOBIA
+    
     In the Object-Based Image Analysis (GEOBIA) approach we tried two different workflows. In the first workflow we used the following tools:
     - Generic Region Merging (OTB) -> to do the segmentation itself 
     - Polygone raster to vector (Gdal) -> transform the output from the GRM tool that is a raster file to a shape file
