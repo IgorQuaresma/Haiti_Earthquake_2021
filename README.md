@@ -66,22 +66,20 @@ Afterwards we tried out different approaches on the selected images:
 
 - Edge detection
 - Texture analysis
-
 - GEOBIA
-
-In the Object-Based Image Analysis (GEOBIA) approach we tried two different workflows. In the first workflow we used the following tools:
-  - Generic Region Merging (OTB) -> to do the segmentation itself 
-  - Polygone raster to vector (Gdal) -> transform the output from the GRM tool that is a raster file to a shape file
-  - Polygon shape indices (saga) -> increase the information that will be shown in the attribute table
-  - Zonal statistics -> based on the original input image and the vector file from the segmentation some statistics are returned (mean, stdev, max, min)
-As a last step, there is the possibility to use the extract by attribute (vector selection) tool for selecting specific wanted features based on the zonal statistics results. However, by looking at the values, we were not able to identify the two main destroyed buildings in the study area selected for this study.
+    In the Object-Based Image Analysis (GEOBIA) approach we tried two different workflows. In the first workflow we used the following tools:
+    - Generic Region Merging (OTB) -> to do the segmentation itself 
+    - Polygone raster to vector (Gdal) -> transform the output from the GRM tool that is a raster file to a shape file
+    - Polygon shape indices (saga) -> increase the information that will be shown in the attribute table
+    - Zonal statistics -> based on the original input image and the vector file from the segmentation some statistics are returned (mean, stdev, max, min)
+  As a last step, there is the possibility to use the extract by attribute (vector selection) tool for selecting specific wanted features based on the zonal statistics results. However, by looking at the values, we were not able to identify the two main destroyed buildings in the study area selected for this study.
 In the second approach, instead of using the Generic Region Merging module, we used the following workflow:
-  - create sample polygons that are going to be used to classify the objects 
-  - Segmentation (OTB) -> to do the segmentation itself
-  - Zonal Statistics (OTB) -> return statistics (mean, stdev, max, min) based on the original image of the study area 
-  - Join attributes by location (vector general) -> join the result from zonal statistics with the sample points that will be used to classify the structures 
-  - TrainVectorClassifier (otb) -> train the classification model by using the result of (mean, stdev) from the zonal statistics tool (together with the sample polygons that were joined in the previous step)
-  - VectorClassifier (otb) -> use the trained model with the original value of zonal statistics (without the sample polygons)
+    - create sample polygons that are going to be used to classify the objects 
+    - Segmentation (OTB) -> to do the segmentation itself
+    - Zonal Statistics (OTB) -> return statistics (mean, stdev, max, min) based on the original image of the study area 
+    - Join attributes by location (vector general) -> join the result from zonal statistics with the sample points that will be used to classify the structures 
+    - TrainVectorClassifier (otb) -> train the classification model by using the result of (mean, stdev) from the zonal statistics tool (together with the sample polygons that were joined in the previous step)
+    - VectorClassifier (otb) -> use the trained model with the original value of zonal statistics (without the sample polygons)
 In this approach, different classifiers can be used when training the model. One layer for each one of the following classifiers were done: libsvm, knn, rf, bayes, boost.  
 
 
