@@ -81,6 +81,8 @@ In the second approach, instead of using the Generic Region Merging module, we u
 - VectorClassifier (otb) -> use the trained model with the original value of zonal statistics (without the sample polygons)
 In this approach, different classifiers can be used when training the model. One layer for each one of the following classifiers were done: libsvm, knn, rf, bayes, boost.  
 
+For the Texture Analysis approach we calculated the Gray Level Co-occurrence Matrix (GLCM) with both R and the OTB plugin for QGIS (HaralickTextureExtraction). Due to inconsistent results though, we have decided to stick to the texture extraction using the *glcm* R package and calculated the GLCM for different moving window sizes (3x3, 5x5, 7x7 and 11x11). 
+
 
 ## Results
 
