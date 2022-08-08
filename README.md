@@ -63,7 +63,7 @@ For the pre-event imagery we used an image cropped to the study area from the im
 
 ## Methodology
 
-The image processing workflow is carried out with the QGIS Processing Toolbox. At first, the pre-event and post-event images are cropped to the study area with the function *gdal:cliprasterbymasklayer*. Afterwards we tried out different approaches on the selected images: edge detection, texture analysis and GEOBIA.
+The image processing workflow is carried out with the QGIS Processing Toolbox. At first, the pre-event and post-event images are cropped to the study area with the function *gdal:cliprasterbymasklayer*. Afterwards we tried out different approaches on the selected images: edge detection, texture analysis and GEOBIA. Additional resources can be found in the corresponding subdirectories.
 
 In the Object-Based Image Analysis (GEOBIA) approach we tried two different workflows. In the first workflow we used the following tools:
 - Generic Region Merging (OTB) -> to do the segmentation itself 
