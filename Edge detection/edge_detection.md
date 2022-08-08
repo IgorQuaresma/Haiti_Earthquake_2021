@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Changes in detected edges in pre-event and post-event imagery could indicate collapsed structures, to test this apporach a Sobel operator was applied to the multichromatic images. The QGIS workflow is also included in this directory.
+Changes in detected edges in pre-event and post-event imagery could indicate collapsed structures, to test this apporach a Sobel operator was applied to the multichromatic images. A brief QGIS workflow is also included in this directory.
 
 
 ## Workflow and Results
@@ -18,4 +18,4 @@ It can be seen that in the case of collapsed walls, the detected edges are less 
 
 ## Discussion
 
-Due to the above limitations, edge detection needs to be combined with an object-based approach to be effective for automatic detection of destroyed buildings.
+Due to the limitations mentioned above, edge detection, also in combination with an object-based approach, is not sufficient for the automatic detection of collapsed buildings for the avaiable imagery.

@@ -65,6 +65,10 @@ For the pre-event imagery we used an image cropped to the study area from the im
 
 The image processing workflow is carried out with the QGIS Processing Toolbox. At first, the pre-event and post-event images are cropped to the study area with the function *gdal:cliprasterbymasklayer*. Afterwards we tried out different approaches on the selected images: edge detection, texture analysis and GEOBIA. Additional resources can be found in the corresponding subdirectories.
 
+The idea behind the edge detection approach is that the edges of roofs in the pre-event imagery will be less distinct on partially collapsed buildings in the post-event imagery. We applied the Sobel operator to the images and compared them manually. However, due to the different viewing angles, so that often different sides of the buildings are visible and therefore the overlap of objects in the images is too small, it is difficult to automatically analyse changes in edges. Another challenge is the presence of sharp edges due to shadows.
+
+For the Texture Analysis approach we calculated the Gray Level Co-occurrence Matrix (GLCM) with both R and the OTB plugin for QGIS (*HaralickTextureExtraction*). Due to inconsistent results though, we have decided to stick to the texture extraction using the *glcm* R package and calculated the GLCM for different moving window sizes (3x3, 5x5, 7x7 and 11x11). 
+
 In the Object-Based Image Analysis (GEOBIA) approach we tried two different workflows. In the first workflow we used the following tools:
 - Generic Region Merging (OTB) -> to do the segmentation itself 
 - Polygone raster to vector (Gdal) -> transform the output from the GRM tool that is a raster file to a shape file
@@ -80,8 +84,6 @@ In the second approach, instead of using the Generic Region Merging module, we u
 - TrainVectorClassifier (otb) -> train the classification model by using the result of (mean, stdev) from the zonal statistics tool (together with the sample polygons that were joined in the previous step)
 - VectorClassifier (otb) -> use the trained model with the original value of zonal statistics (without the sample polygons)
 In this approach, different classifiers can be used when training the model. One layer for each one of the following classifiers were done: libsvm, knn, rf, bayes, boost.  
-
-For the Texture Analysis approach we calculated the Gray Level Co-occurrence Matrix (GLCM) with both R and the OTB plugin for QGIS (*HaralickTextureExtraction*). Due to inconsistent results though, we have decided to stick to the texture extraction using the *glcm* R package and calculated the GLCM for different moving window sizes (3x3, 5x5, 7x7 and 11x11). 
 
 
 ## Results
